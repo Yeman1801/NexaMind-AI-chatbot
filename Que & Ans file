@@ -1,0 +1,706 @@
+# ---------------- LOAD DATA ----------------
+
+questions = [
+    "What is the latest news about AI?",
+    "What is happening in the tech industry?",
+    "What is new in cybersecurity?",
+    "What is the latest in cloud computing?",
+    "What is happening with data science?",
+    "What is new in robotics?",
+    "What is happening in software development?",
+    "What is trending in mobile apps?",
+    "What is happening in blockchain technology?",
+    "What is the future of automation?",
+    "What is the current global economy status?",
+    "What is happening in stock markets?",
+    "What is the latest business trend?",
+    "What is happening in startups?",
+    "What is new in global trade?",
+    "What is happening in inflation?",
+    "What is new in banking?",
+    "What is happening in fintech?",
+    "What is new in cryptocurrency?",
+    "What is happening in e-commerce?",
+    "What is happening in climate change?",
+    "What is new in renewable energy?",
+    "What is happening with global warming?",
+    "What is the latest environmental issue?",
+    "What is happening in pollution control?",
+    "What is new in sustainability?",
+    "What is happening in wildlife conservation?",
+    "What is new in water resources?",
+    "What is happening in green technology?",
+    "What is the future of clean energy?",
+    "What is happening in healthcare?",
+    "What is new in medical technology?",
+    "What is happening in vaccines?",
+    "What is new in disease prevention?",
+    "What is happening in hospitals?",
+    "What is new in mental health awareness?",
+    "What is happening in nutrition science?",
+    "What is new in fitness trends?",
+    "What is happening in biotechnology?",
+    "What is the future of medicine?",
+    "What is happening in education systems?",
+    "What is new in online learning?",
+    "What is happening in schools?",
+    "What is new in universities?",
+    "What is happening in exams?",
+    "What is new in skill development?",
+    "What is happening in student life?",
+    "What is new in digital education?",
+    "What is happening in teaching methods?",
+    "What is the future of education?",
+    "What is happening in global politics?",
+    "What is new in international relations?",
+    "What is happening in elections?",
+    "What is new in government policies?",
+    "What is happening in diplomacy?",
+    "What is new in political strategies?",
+    "What is happening in world leadership?",
+    "What is new in law and order?",
+    "What is happening in public policy?",
+    "What is the future of governance?",
+    "What is happening in sports?",
+    "What is new in football?",
+    "What is happening in cricket?",
+    "What is new in Olympics?",
+    "What is happening in athletes performance?",
+    "What is new in sports technology?",
+    "What is happening in tournaments?",
+    "What is new in fitness sports?",
+    "What is happening in esports?",
+    "What is the future of sports?",
+    "What is happening in space exploration?",
+    "What is new in NASA missions?",
+    "What is happening in Mars research?",
+    "What is new in satellites?",
+    "What is happening in astronomy?",
+    "What is new in space technology?",
+    "What is happening in rocket launches?",
+    "What is new in space discoveries?",
+    "What is happening in moon missions?",
+    "What is the future of space travel?",
+    "What is happening in social media?",
+    "What is new in digital marketing?",
+    "What is happening in content creation?",
+    "What is new in influencers?",
+    "What is happening in online trends?",
+    "What is new in communication tools?",
+    "What is happening in internet usage?",
+    "What is new in virtual reality?",
+    "What is happening in augmented reality?",
+    "What is the future of social platforms?",
+    "What is happening in global news?",
+    "What is new in world updates?",
+    "What is happening in international events?",
+    "What is new in breaking news?",
+    "What is happening in daily headlines?",
+    "What is new in journalism?",
+    "What is happening in news reporting?",
+    "What is new in media industry?",
+    "What is happening in press updates?",
+    "What is the future of news industry?"
+]
+
+answers = {
+    0: [
+        "AI adoption is increasing rapidly across industries worldwide.",
+        "Major AI companies are investing heavily in generative AI research.",
+        "AI is influencing job markets and automation strategies."
+    ],
+
+    1: [
+        "Tech companies are focusing on cloud, AI, and sustainability.",
+        "Startups are introducing innovative products at a fast pace.",
+        "Mergers and acquisitions are reshaping the tech landscape."
+    ],
+
+    2: [
+        "Cybersecurity threats are growing with more sophisticated attacks.",
+        "Companies are adopting AI-driven security tools to detect risks.",
+        "Global regulations are tightening data protection measures."
+    ],
+
+    3: [
+        "Cloud providers are expanding AI-enabled services for businesses.",
+        "Hybrid and multi-cloud solutions are becoming standard.",
+        "Edge computing is being integrated to improve latency and performance."
+    ],
+
+    4: [
+        "Data science is being used for predictive analytics and insights.",
+        "AI-driven automation is reducing manual data processing tasks.",
+        "Data ethics and privacy are increasingly important in analysis."
+    ],
+
+    5: [
+        "Robotics is advancing in manufacturing, healthcare, and logistics.",
+        "Collaborative robots (cobots) are becoming more common in workplaces.",
+        "AI-powered robots are improving precision and efficiency in tasks."
+    ],
+
+    6: [
+        "Software development is embracing low-code and no-code platforms.",
+        "AI-assisted coding tools are enhancing productivity.",
+        "Security and DevOps practices are integrated into development pipelines."
+    ],
+
+    7: [
+        "Mobile apps are integrating AI for personalization and recommendations.",
+        "Health and finance apps are gaining major adoption.",
+        "Cross-platform app development frameworks are trending."
+    ],
+
+    8: [
+        "Blockchain is expanding beyond crypto into supply chain and finance.",
+        "Decentralized finance (DeFi) platforms are growing in popularity.",
+        "Governments are exploring regulations for blockchain adoption."
+    ],
+
+    9: [
+        "Automation will increasingly combine AI and robotics in workplaces.",
+        "Business processes are being redesigned to leverage automation.",
+        "Reskilling workers is key to adapting to automated systems."
+    ],
+
+    10: [
+        "Global economic growth is slowing in some regions due to geopolitical tensions.",
+        "Inflation and energy costs are key concerns for economies worldwide.",
+        "Emerging markets show mixed performance amid uncertainty."
+    ],
+
+    11: [
+        "Stock markets are reacting to inflation and interest rate trends.",
+        "Tech and AI stocks are driving market volatility.",
+        "Investors are seeking safe-haven assets amid uncertainty."
+    ],
+
+    12: [
+        "Businesses are prioritizing digital transformation and sustainability.",
+        "AI and cloud adoption are shaping corporate strategy.",
+        "Consumer demand for innovation is driving new business models."
+    ],
+
+    13: [
+        "Startups are focusing on AI, fintech, and healthcare solutions.",
+        "Venture funding continues to flow into promising early-stage companies.",
+        "Global startup ecosystems are expanding rapidly in Asia and Europe."
+    ],
+
+    14: [
+        "Trade disruptions and geopolitical tensions affect global supply chains.",
+        "Digital trade platforms are growing in importance.",
+        "Countries are negotiating new trade agreements and tariffs."
+    ],
+
+    15: [
+        "Inflation remains a focus for central banks and policymakers.",
+        "Energy prices and supply chain issues are contributing to rising costs.",
+        "Consumer spending patterns are shifting in response to inflation."
+    ],
+
+    16: [
+        "Banks are expanding digital services and online platforms.",
+        "Interest rate adjustments are impacting lending and deposits.",
+        "Neo-banks and fintech partnerships are changing traditional banking."
+    ],
+
+    17: [
+        "Fintech innovation is driving new payment and lending solutions.",
+        "Regulatory frameworks are evolving to accommodate fintech growth.",
+        "AI and blockchain are being integrated into financial technology."
+    ],
+
+    18: [
+        "New blockchain platforms and protocols are being launched.",
+        "Stablecoins and DeFi platforms are gaining wider adoption.",
+        "Governments and regulators are introducing new crypto rules."
+    ],
+
+    19: [
+        "E-commerce is seeing growth in mobile shopping and apps.",
+        "AI-powered recommendation systems are enhancing sales.",
+        "Supply chain optimization is improving delivery speed and efficiency."
+    ],
+
+    20: [
+        "Climate change effects are intensifying with rising sea levels.",
+        "Extreme weather events are becoming more frequent globally.",
+        "Countries are adopting stricter climate policies and carbon targets."
+    ],
+
+    21: [
+        "Solar, wind, and bioenergy technologies are advancing rapidly.",
+        "Energy storage and grid integration innovations are increasing.",
+        "Floating solar farms and offshore wind projects are expanding."
+    ],
+
+    22: [
+        "Global temperatures continue to rise, affecting ecosystems.",
+        "Polar ice melt and glacier retreat are accelerating.",
+        "Extreme weather patterns are linked to global warming trends."
+    ],
+
+    23: [
+        "Plastic pollution and deforestation remain major environmental issues.",
+        "Air and water quality deterioration is gaining attention.",
+        "Environmental justice and equity are emerging policy focuses."
+    ],
+
+    24: [
+        "Industrial emissions controls are being upgraded worldwide.",
+        "Urban pollution monitoring and air filtration are expanding.",
+        "Policies incentivize waste reduction and circular economy solutions."
+    ],
+
+    25: [
+        "Companies adopt eco-friendly production and packaging.",
+        "Sustainable supply chains and ethical sourcing are trending.",
+        "Carbon footprint tracking and reporting are becoming standard."
+    ],
+
+    26: [
+        "Wildlife corridors and protected areas are being increased.",
+        "Anti-poaching technologies and monitoring drones are used.",
+        "Endangered species breeding and reintroduction programs are active."
+    ],
+
+    27: [
+        "Desalination and water recycling projects are growing.",
+        "Smart irrigation and water conservation technologies are emerging.",
+        "Groundwater and aquifer management strategies are improving."
+    ],
+
+    28: [
+        "Electric vehicles and green mobility tech are advancing.",
+        "Energy-efficient building technologies are widely adopted.",
+        "Sustainable materials and eco-design are trending in industry."
+    ],
+
+    29: [
+        "Renewable energy investments and adoption are increasing globally.",
+        "Solar, wind, and battery storage costs are dropping.",
+        "Decentralized microgrids are gaining popularity for clean energy access."
+    ],
+
+    30: [
+        "Telemedicine and digital health platforms are expanding.",
+        "AI diagnostics and predictive healthcare tools are growing.",
+        "Healthcare policy reforms are improving access and quality."
+    ],
+
+    31: [
+        "Wearable devices and AI-assisted medical imaging are advancing.",
+        "Robotics-assisted surgery and tele-surgery are emerging.",
+        "Personalized medicine and genomics-based treatments are growing."
+    ],
+
+    32: [
+        "New vaccines for infectious diseases are being developed rapidly.",
+        "mRNA vaccine technology is expanding to other diseases.",
+        "Global vaccination programs are improving distribution and coverage."
+    ],
+
+    33: [
+        "Preventive health programs and screenings are expanding.",
+        "AI and data analytics help track disease outbreaks.",
+        "Public health campaigns focus on lifestyle and hygiene improvements."
+    ],
+
+    34: [
+        "Hospital infrastructure is being upgraded with digital systems.",
+        "Patient care is enhanced with telehealth and electronic records.",
+        "Efficiency and workflow optimization is transforming hospital management."
+    ],
+
+    35: [
+        "Mental health awareness campaigns are growing globally.",
+        "Tele-therapy and mental wellness apps are widely used.",
+        "Schools and workplaces integrate programs for stress management."
+    ],
+
+    36: [
+        "Research on nutrition and personalized diets is increasing.",
+        "Functional foods and supplements gain popularity.",
+        "AI-driven nutrition planning and tracking tools are emerging."
+    ],
+
+    37: [
+        "Home fitness apps and wearables are expanding user engagement.",
+        "High-intensity and functional training trends are rising.",
+        "AI-personalized workouts and virtual coaching are becoming mainstream."
+    ],
+
+    38: [
+        "Gene editing and CRISPR technologies are advancing rapidly.",
+        "Biotech startups are developing innovative therapies and diagnostics.",
+        "Biomanufacturing and synthetic biology are expanding industrial applications."
+    ],
+
+    39: [
+        "Personalized medicine is becoming more precise using genomics.",
+        "Telemedicine and AI diagnostics are shaping future healthcare.",
+        "Medical research focuses on longevity, rare diseases, and AI-assisted treatments."
+    ],
+
+    40: [
+        "Education systems are integrating technology and hybrid learning.",
+        "Curriculums are being updated to include critical thinking and digital literacy.",
+        "Global education reforms focus on accessibility and quality improvements."
+    ],
+
+    41: [
+        "Online learning platforms are expanding with AI personalization.",
+        "Interactive and gamified learning experiences are trending.",
+        "Micro-credentials and short courses are gaining popularity."
+    ],
+
+    42: [
+        "Schools are adopting blended learning and digital classrooms.",
+        "Student mental health programs are being introduced.",
+        "STEM and coding are emphasized in modern curriculums."
+    ],
+
+    43: [
+        "Universities are expanding global partnerships and research programs.",
+        "Digital labs and AI-driven learning tools are being integrated.",
+        "Flexible degree programs and interdisciplinary studies are emerging."
+    ],
+
+    44: [
+        "Exams are moving toward online and adaptive testing.",
+        "Continuous assessment and project-based evaluations are increasing.",
+        "AI tools help in grading and reducing evaluation bias."
+    ],
+
+    45: [
+        "Skill development programs focus on AI, coding, and data literacy.",
+        "Vocational and soft skills are being integrated into curriculums.",
+        "Online platforms make upskilling accessible globally."
+    ],
+
+    46: [
+        "Student life includes hybrid learning, online communities, and clubs.",
+        "Mental health and wellness activities are becoming standard.",
+        "Entrepreneurship and innovation hubs are expanding in universities."
+    ],
+
+    47: [
+        "Digital education integrates VR, AR, and AI for immersive learning.",
+        "Learning analytics track student progress and engagement.",
+        "Open educational resources (OER) are widely available online."
+    ],
+
+    48: [
+        "Teaching methods now include flipped classrooms and active learning.",
+        "AI-assisted lesson planning supports personalized learning.",
+        "Collaborative and experiential learning is increasingly used."
+    ],
+
+    49: [
+        "Education will focus on AI, lifelong learning, and skill adaptability.",
+        "Hybrid and personalized learning will become standard.",
+        "Global collaboration and digital classrooms will shape the future."
+    ],
+
+    50: [
+        "Global politics are influenced by climate, trade, and technology challenges.",
+        "Geopolitical tensions and alliances are shifting rapidly.",
+        "International policy debates focus on security, economy, and human rights."
+    ],
+
+    51: [
+        "International relations emphasize trade, security, and climate agreements.",
+        "Diplomatic partnerships and multilateral organizations play key roles.",
+        "Cybersecurity and tech diplomacy are increasingly important."
+    ],
+
+    52: [
+        "Elections are increasingly using digital voting systems.",
+        "Voter engagement and political campaigns leverage social media.",
+        "Election integrity and transparency remain key concerns."
+    ],
+
+    53: [
+        "Governments are introducing policies to boost innovation and sustainability.",
+        "Public health, education, and infrastructure reforms are ongoing.",
+        "Digital governance and e-services are expanding."
+    ],
+
+    54: [
+        "Diplomacy focuses on conflict resolution, climate, and trade negotiations.",
+        "Virtual diplomacy platforms are emerging for international talks.",
+        "Soft power strategies influence global relationships."
+    ],
+
+    55: [
+        "Political strategies increasingly use data analytics and AI.",
+        "Campaigns focus on digital outreach and targeted communication.",
+        "Coalitions and alliances shape domestic and global policies."
+    ],
+
+    56: [
+        "World leadership is adapting to multipolar global power shifts.",
+        "Leaders focus on sustainability, economy, and geopolitical stability.",
+        "Global crises like climate and pandemics challenge decision-making."
+    ],
+
+    57: [
+        "Law and order policies are incorporating AI and surveillance technology.",
+        "Criminal justice reforms focus on fairness and efficiency.",
+        "Cybercrime and digital threats are a growing focus for law enforcement."
+    ],
+
+    58: [
+        "Public policy is increasingly informed by data analytics and AI.",
+        "Policies target social equity, health, and environmental sustainability.",
+        "Citizen engagement platforms are improving policy feedback."
+    ],
+
+    59: [
+        "Governance will integrate technology, transparency, and citizen participation.",
+        "AI and digital tools will enhance decision-making efficiency.",
+        "Global collaboration will define future governance models."
+    ],
+
+    60: [
+        "Sports are incorporating technology for performance and analytics.",
+        "Global competitions and new formats increase fan engagement.",
+        "Health, fitness, and safety regulations are improving."
+    ],
+
+    61: [
+        "Football is using VAR, AI analytics, and wearable tech for players.",
+        "Global tournaments are attracting digital fan engagement platforms.",
+        "Youth academies focus on skill development and data-driven training."
+    ],
+
+    62: [
+        "Cricket is adopting T20 leagues and franchise models globally.",
+        "Technology in player performance and umpire decisions is growing.",
+        "Women's cricket and grassroots programs are expanding rapidly."
+    ],
+
+    63: [
+        "Olympics are focusing on sustainability and digital fan engagement.",
+        "New sports and mixed-gender events are being introduced.",
+        "AI and analytics are used to enhance athlete performance tracking."
+    ],
+
+    64: [
+        "Athlete performance is improving with AI-driven training tools.",
+        "Wearables and biometrics track health and recovery.",
+        "Nutrition and personalized coaching are optimizing results."
+    ],
+
+    65: [
+        "Sports technology includes smart equipment and sensors.",
+        "Video replay systems and analytics enhance decision-making.",
+        "Virtual training and simulation tools are growing in popularity."
+    ],
+
+    66: [
+        "Tournaments are expanding globally with digital streaming.",
+        "New formats and leagues are increasing fan engagement.",
+        "Prize money and sponsorships are growing across sports."
+    ],
+
+    67: [
+        "Fitness sports trends focus on high-intensity interval training.",
+        "Wearable tech tracks progress and performance metrics.",
+        "Community challenges and gamified fitness apps are popular."
+    ],
+
+    68: [
+        "Esports tournaments are gaining global recognition.",
+        "Player performance analytics and AI coaching are emerging.",
+        "Virtual and augmented reality games expand immersive experiences."
+    ],
+
+    69: [
+        "Sports will integrate AI, virtual reality, and enhanced analytics.",
+        "Global leagues will expand hybrid online-offline formats.",
+        "Health, safety, and sustainability will guide future sports."
+    ],
+
+    70: [
+        "Space exploration is expanding with private companies and nations.",
+        "Moon, Mars, and asteroid missions are ongoing.",
+        "New international space collaborations are forming."
+    ],
+
+    71: [
+        "NASA missions focus on lunar exploration and Mars preparation.",
+        "New satellite launches support climate and science research.",
+        "AI and robotics are improving mission efficiency."
+    ],
+
+    72: [
+        "Mars research focuses on habitability and resource mapping.",
+        "Rovers and orbiters collect geological and atmospheric data.",
+        "Plans for human missions and colonization are advancing."
+    ],
+
+    73: [
+        "New satellites improve Earth observation and communication.",
+        "Mini and micro satellites are increasingly deployed.",
+        "AI is used to process satellite data for climate and security."
+    ],
+
+    74: [
+        "Astronomy research is exploring exoplanets and black holes.",
+        "Telescopes and observatories are becoming more advanced.",
+        "Cosmology studies continue to refine the universe’s origins."
+    ],
+
+    75: [
+        "Space technology innovations include reusable rockets and propulsion.",
+        "AI and robotics enhance mission planning and safety.",
+        "3D printing and in-space manufacturing are emerging trends."
+    ],
+
+    76: [
+        "Rocket launches are becoming more frequent and cost-efficient.",
+        "Private companies are driving commercial space flight.",
+        "International collaboration ensures safe and effective launches."
+    ],
+
+    77: [
+        "Space discoveries include new exoplanets and cosmic phenomena.",
+        "Asteroid mapping and resource potential are expanding.",
+        "Dark matter and gravitational studies are progressing."
+    ],
+
+    78: [
+        "Moon missions focus on scientific research and sustainable bases.",
+        "Private and public partnerships are advancing lunar exploration.",
+        "Robotic and human missions are planned for the near future."
+    ],
+
+    79: [
+        "Space travel may become commercial and more accessible.",
+        "AI-driven mission planning will enhance safety and efficiency.",
+        "Interplanetary travel concepts are under active research."
+    ],
+
+    80: [
+        "Social media platforms are expanding AI-driven content moderation.",
+        "Short-form video and interactive formats are trending.",
+        "Privacy and data protection are increasingly scrutinized."
+    ],
+
+    81: [
+        "Digital marketing uses AI, personalization, and analytics.",
+        "Social commerce and influencer campaigns are growing.",
+        "AR/VR advertising and interactive content are emerging."
+    ],
+
+    82: [
+        "Content creation is increasingly video and AI-assisted.",
+        "Platforms encourage collaborative and interactive media.",
+        "Monetization strategies include subscriptions and sponsorships."
+    ],
+
+    83: [
+        "Influencers are leveraging multiple platforms and niche audiences.",
+        "AI tools assist in content optimization and scheduling.",
+        "Brand collaborations and live streaming events are growing."
+    ],
+
+    84: [
+        "Online trends evolve rapidly with viral content and memes.",
+        "Short videos, challenges, and interactive posts drive engagement.",
+        "User-generated content shapes platform dynamics."
+    ],
+
+    85: [
+        "Communication tools integrate AI, video conferencing, and collaboration.",
+        "Messaging apps expand business and social functionalities.",
+        "Cross-platform integration improves workflow and connectivity."
+    ],
+
+    86: [
+        "Internet usage continues to grow globally with mobile-first access.",
+        "Streaming, social media, and cloud services dominate usage.",
+        "Digital literacy and cybersecurity awareness are increasing."
+    ],
+
+    87: [
+        "Virtual reality expands gaming, training, and educational experiences.",
+        "VR headsets and immersive platforms are improving performance.",
+        "AI-generated environments and simulations enhance interactivity."
+    ],
+
+    88: [
+        "Augmented reality integrates digital content with real-world views.",
+        "AR is used in retail, education, and navigation applications.",
+        "AR glasses and mobile apps are expanding consumer adoption."
+    ],
+
+    89: [
+        "Social platforms will evolve with AI, AR/VR, and immersive experiences.",
+        "Decentralized social networks may offer more privacy and control.",
+        "Interactive commerce and content personalization will dominate."
+    ],
+
+    90: [
+        "Global news focuses on geopolitics, climate, and tech developments.",
+        "Digital platforms deliver instant updates worldwide.",
+        "Fact-checking and credibility verification are increasingly important."
+    ],
+
+    91: [
+        "World updates include political, environmental, and scientific events.",
+        "Real-time news dashboards and AI summarization tools are emerging.",
+        "Global news agencies expand multimedia coverage."
+    ],
+
+    92: [
+        "International events like summits and sports attract global attention.",
+        "Virtual conferences and hybrid events increase accessibility.",
+        "Diplomatic and cultural exchanges continue to expand."
+    ],
+
+    93: [
+        "Breaking news is disseminated via social media and live streaming.",
+        "AI-driven alerts provide faster and personalized updates.",
+        "Journalists rely on real-time data and reporting tools."
+    ],
+
+    94: [
+        "Daily headlines summarize major political, economic, and social events.",
+        "News aggregation apps provide personalized coverage.",
+        "Mobile-first consumption dominates audience behavior."
+    ],
+
+    95: [
+        "Journalism embraces multimedia storytelling and AI assistance.",
+        "Investigative reporting and fact-checking are emphasized.",
+        "Global collaboration among media outlets is growing."
+    ],
+
+    96: [
+        "News reporting uses AI for speed and accuracy.",
+        "Citizen journalism and social media reporting expand coverage.",
+        "Live updates and data visualization enhance news delivery."
+    ],
+
+    97: [
+        "Media industry trends include digital-first platforms and subscriptions.",
+        "Streaming, podcasts, and interactive media are growing rapidly.",
+        "AI tools assist in content creation and audience analysis."
+    ],
+
+    98: [
+        "Press updates integrate social media and mobile notifications.",
+        "News agencies adopt real-time monitoring and analytics.",
+        "Global coverage is enhanced by multimedia and online platforms."
+    ],
+
+    99: [
+        "The future of news industry focuses on AI, immersive media, and digital subscriptions.",
+        "Decentralized and community-driven news platforms may rise.",
+        "Personalized, interactive, and instant news delivery will dominate."
+    ]
+}
